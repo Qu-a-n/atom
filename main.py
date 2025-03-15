@@ -50,7 +50,6 @@ DATASET_CONFIGS = {
 
 class ExperimentRunner:
     def __init__(self, dataset: str, model: str, start: int = 0, end: int = -1, mode: str = "atom"):
-        """初始化实验运行器"""
         self.dataset = dataset
         self.start = start
         self.end = None if end == -1 else end
@@ -228,7 +227,6 @@ async def optimize_dataset(dataset: str, model: str, start: int = 0, end: int = 
     return optimized_data
 
 async def main():
-    """主函数"""
     parser = argparse.ArgumentParser(description='Run experiments on various datasets')
     parser.add_argument('--dataset', type=str, default='mmlu', 
                         choices=list(DATASET_CONFIGS.keys()),
